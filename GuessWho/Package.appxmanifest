@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="42079AchindraBhatnagar.GuessWho" Publisher="CN=achindra" Version="1.0.9.0" />
+  <Identity Name="42079AchindraBhatnagar.GuessWho" Publisher="CN=achindra" Version="1.0.10.0" />
   <mp:PhoneIdentity PhoneProductId="4d7b8514-4e99-4c15-b14b-18808e50df51" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>GuessWho</DisplayName>

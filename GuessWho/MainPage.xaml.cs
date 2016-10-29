@@ -66,7 +66,6 @@ namespace GuessWho
         public MainPage()
         {
             InitializeComponent();
-            ApplicationData.Current.LocalSettings.Values.Clear();
             
             HttpHandler.init();
             btnFileQuery.IsEnabled = HttpHandler.initDone;
