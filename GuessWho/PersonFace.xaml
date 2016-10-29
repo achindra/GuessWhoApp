@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="GuessWho.PersonFace"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GuessWho"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.BottomAppBar>
+        <CommandBar Name="PersonCommandBar">
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton x:Name="appbarFaceHomeButton" Icon="Home" Label="Home" Click="appbarFaceHomeButton_Click"  IsEnabled="True"/>
+            <AppBarButton x:Name="appbarFaceRefreshButton" Icon="Refresh" Label="Refresh" Click="AppBarButtonPersonFaceRefresh_Click"/>
+            <AppBarSeparator/>
+            <AppBarButton x:Name="appbarFaceAddFromCameraButton" Icon="Camera" Label="Add from Camera" Click="appbarFaceAddFromCameraButton_Click"  IsEnabled="True"/>
+            <AppBarButton x:Name="appbarFaceAddFromFileButton" Icon="Pictures" Label="Add from Gallery" Click="appbarFaceAddFromFileButton_Click"  IsEnabled="True"/>
+            <!--<AppBarButton x:Name="appbarEditFaceButton" Icon="Edit" Label="Update" Click="AppBarButtonEditFace_Click" IsEnabled="False"/>-->
+            <AppBarButton x:Name="appbarDeleteFaceButton" Icon="Delete" Label="Delete" Click="AppBarButtonDeleteFace_Click" IsEnabled="False"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="4,75,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="10,581,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock x:Name="textBlockFace" HorizontalAlignment="Center" Margin="10,47,10,0" TextWrapping="Wrap" Text="Face" VerticalAlignment="Top" Height="29" Width="340" TextAlignment="Center" FontWeight="Bold" FontFamily="Segoe WP Black" FontSize="18"/>
+
+        <ListView x:Name="personFaceListView" SelectionChanged="personFaceListView_SelectionChanged"
+                  HorizontalAlignment="Left" Height="493" Margin="10,83,0,0" VerticalAlignment="Top" Width="335" MinWidth="100"                   
+                  ScrollViewer.HorizontalScrollMode="Enabled" ScrollViewer.VerticalScrollMode="Disabled"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                  >
+            <!--ItemsSource="{Binding ElementName=UI, Path=FaceImageCollection}"-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!--StackPanel Width="100" Height="100"-->
+                    <Image  Height="99" Source="{Binding Image}" Tag="{Binding FaceInfo}" ToolTipService.ToolTip="{Binding PersistedFaceId}" />
+                        <!--TextBlock Text="{Binding persistedFaceId}" /-->
+                    </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ProgressRing x:Name="personFaceProgressRing" VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" Height="50" MinWidth="50" MinHeight="50" Foreground="Blue" />
+    </Grid>
+</Page>

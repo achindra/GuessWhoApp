@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="GuessWho.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GuessWho"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton x:Name="appbarSaveButton" Icon="Save" Label="Save" Click="appbarSaveButton_Click"/>
+            <AppBarButton x:Name="appbarCancelButton" Icon="Cancel" Label="Close" Click="appbarCancelButton_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Left" Width="360">
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="0,590,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="2,376,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="4,75,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="10,47,10,0" TextWrapping="Wrap" Text="Settings" VerticalAlignment="Top" Height="29" Width="340" TextAlignment="Center" FontWeight="Bold" FontFamily="Segoe WP Black" FontSize="18"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,83,0,0" TextWrapping="Wrap" Text="Account Details" VerticalAlignment="Top" FontWeight="Bold"/>
+        <HyperlinkButton Content="Subscription Key (Face Preview)" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" NavigateUri="https://www.microsoft.com/cognitive-services/en-us/subscriptions"/>
+        <TextBox x:Name="txtSubscriptionKey" HorizontalAlignment="Left" Margin="10,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="340"/>
+        <HyperlinkButton Content="StorageAccount Key" HorizontalAlignment="Left" Margin="10,234,0,0" VerticalAlignment="Top" NavigateUri="https://portal.azure.com/#resource/subscriptions"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="10,177,0,0" TextWrapping="Wrap" Text="StorageAccount Name" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtStorageAccountName" HorizontalAlignment="Left" Margin="10,202,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="340"/>
+        <TextBox x:Name="txtStorageAccountKey" HorizontalAlignment="Left" Margin="10,271,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="340" Height="104"/>
+        <AppBarButton x:Name="appBarTrainButton" HorizontalAlignment="Left" Icon="ReShare" Label="Train" Margin="282,375,0,0" VerticalAlignment="Top" Click="appBarTrainButton_Click"/>
+        <AppBarButton x:Name="appBarStatusButton" HorizontalAlignment="Left" Icon="View" Label="Status" Margin="282,431,0,0" VerticalAlignment="Top" Click="appBarStatusButton_Click"/>
+        <ListView x:Name="listViewPeopleGroup" HorizontalAlignment="Left" Height="196" Margin="10,384,0,0" VerticalAlignment="Top" Width="267" SelectionChanged="listViewPeopleGroup_SelectionChanged">
+            <ProgressRing VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="ProgressRingSettingsPage"/>
+        </ListView>
+        <AppBarButton x:Name="appBarEditPersonGroupButton" HorizontalAlignment="Left" Icon="Edit" Label="Edit Person Group" Margin="282,508,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>
