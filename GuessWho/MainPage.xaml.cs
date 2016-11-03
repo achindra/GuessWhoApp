@@ -160,21 +160,27 @@ namespace GuessWho
         }
 
         private void appbarToggleCamera_Checked(object sender, RoutedEventArgs e)
-        {            
-            backgroundImage.ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/ic_launcher.png"));
-            if (null != btnFileQuery)
-                btnFileQuery.Background = backgroundImage;
-        }
-
-        private void appbarToggleCamera_Unchecked(object sender, RoutedEventArgs e)
         {
-            backgroundImage.ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/galleryicon.png"));
+            if(null != appbarToggleFile)
+                appbarToggleFile.IsChecked = false;
+
+            backgroundImage.ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/ic_launcher.png"));
             if (null != btnFileQuery)
                 btnFileQuery.Background = backgroundImage;
         }
 
         private void btnFileQuery_PointerEntered(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
+            if (null != btnFileQuery)
+                btnFileQuery.Background = backgroundImage;
+        }
+
+        private void appbarToggleFile_Checked(object sender, RoutedEventArgs e)
+        {
+            if(null != appbarToggleCamera)
+                appbarToggleCamera.IsChecked = false;
+
+            backgroundImage.ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/galleryicon.png"));
             if (null != btnFileQuery)
                 btnFileQuery.Background = backgroundImage;
         }
