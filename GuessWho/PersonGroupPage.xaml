@@ -13,7 +13,7 @@
             </CommandBar.Content>
             <AppBarButton x:Name="appbarPersonGroupHomeButton" Icon="Home" Label="Home" Click="appbarPersonGroupHomeButton_Click"  IsEnabled="True"/>
             <AppBarButton x:Name="appbarPersonGroupRefreshButton" Icon="Refresh" Label="Refresh" Click="AppBarButtonPersonGroupRefresh_Click"/>
-            <AppBarButton x:Name="appbarPersonGroupNextButton" Icon="Next" Label="Next" Click="appbarPersonGroupNextButton_Click"  IsEnabled="False"/>
+            <AppBarButton x:Name="appbarPersonGroupNextButton" Icon="AddFriend" Label="Add People" Click="appbarPersonGroupNextButton_Click"  IsEnabled="False"/>
             <AppBarSeparator/>
             <AppBarButton x:Name="appbarAddPersonGroupButton" Icon="Add" Label="Add" Click="AppBarButtonAddPersonGroup_Click"/>
             <AppBarButton x:Name="appbarEditPersonGroupButton" Icon="Edit" Label="Update" Click="AppBarButtonEditPersonGroup_Click" IsEnabled="False"/>
@@ -22,10 +22,10 @@
     </Page.BottomAppBar>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="4,75,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name="txtPersonGroup" HorizontalAlignment="Left" Margin="95,480,0,0" TextWrapping="Wrap" Text="New Group Name" VerticalAlignment="Top" Width="259" InputScope="AlphanumericPin"/>
-        <TextBox x:Name="txtPersonGroupContext" HorizontalAlignment="Left" Margin="95,522,0,0" TextWrapping="Wrap" Text="New Group Details" VerticalAlignment="Top" Width="259" Height="63"/>
-        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="4,472,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="3" Margin="4,75,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox x:Name="txtPersonGroup" HorizontalAlignment="Left" Margin="95,480,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="259" InputScope="AlphanumericPin" PlaceholderText="New Group Name"/>
+        <TextBox x:Name="txtPersonGroupContext" HorizontalAlignment="Left" Margin="95,522,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="259" Height="63" PlaceholderText="New Group Details"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="3" Margin="4,472,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="10,47,10,0" TextWrapping="Wrap" Text="Person Group" VerticalAlignment="Top" Height="29" Width="340" TextAlignment="Center" FontWeight="Bold" FontFamily="Segoe WP Black" FontSize="18"/>
         <ListView x:Name="personGroupListView" HorizontalAlignment="Left" Height="384" Margin="10,83,0,0" VerticalAlignment="Top" Width="335" MinWidth="100" SelectionChanged="peopleListView_SelectionChanged"/>
         <ProgressRing x:Name="personGroupProgressRing" VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" Height="50" MinWidth="50" MinHeight="50" Foreground="Blue" />

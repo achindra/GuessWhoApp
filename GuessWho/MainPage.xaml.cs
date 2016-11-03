@@ -69,11 +69,14 @@ namespace GuessWho
             
             HttpHandler.init();
             btnFileQuery.IsEnabled = HttpHandler.initDone;
-            appbarPersonGroupNextButton.IsEnabled = HttpHandler.initDone;
+            backgroundImage.ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/ic_launcher.png"));
         }
 
         private async void btnFileQuery_Click(object sender, RoutedEventArgs e)
         {
+            if (null != btnFileQuery)
+                btnFileQuery.Background = backgroundImage;
+
             txtResponse.Text = "";
             btnFileQuery.IsEnabled = false;
             StorageFile file = null;
@@ -101,10 +104,6 @@ namespace GuessWho
         }
 
 
-        private void appbarPersonGroupNextButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(PersonGroupPage));
-        }
 
         private async void FaceQuery(StorageFile file)
         {

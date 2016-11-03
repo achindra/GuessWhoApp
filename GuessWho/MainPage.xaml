@@ -13,22 +13,21 @@
             </CommandBar.Content>
             <AppBarButton x:Name="appbarSettingsButton" Icon="Setting" Label="Settings" Click="appbarSettingsButton_Click"/>
             <AppBarToggleButton x:Name="appbarToggleCamera" Icon="Camera" Label="Camera/File" IsChecked="True" Checked="appbarToggleCamera_Checked" Unchecked="appbarToggleCamera_Unchecked"/>
-            <AppBarButton x:Name="appbarPersonGroupNextButton" Icon="People" Label="People Group" Click="appbarPersonGroupNextButton_Click" />
         </CommandBar>
     </Page.BottomAppBar>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Image x:Name="CapturedPhoto" Height="350" Width="Auto"  Margin="4,65,6,0" VerticalAlignment="Top" Stretch="Uniform"/>
+        <Image x:Name="CapturedPhoto" Height="350" Width="Auto"  Margin="4,65,6,0" VerticalAlignment="Top" Stretch="Uniform" HorizontalAlignment="Center"/>
         <Button x:Name="btnFileQuery" HorizontalAlignment="Center" VerticalAlignment="Top" Width="60" Click="btnFileQuery_Click" 
                 Margin="0,420,0,0" Height="60" ClickMode="Press" PointerEntered="btnFileQuery_PointerEntered">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="Assets/ic_launcher.png"/>
             </Button.Background>
         </Button>
-        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="4,56,0,0" Stroke="Black" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="3" Margin="4,56,0,0" Stroke="Black" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
         <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center"  Height="3" Margin="4,488,0,0" Stroke="Black" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="53" Margin="0,-2,0,0" VerticalAlignment="Top" Width="360" Source="Assets/Remember-a-Person.jpg" Stretch="UniformToFill"/>
+        <Image x:Name="image" HorizontalAlignment="Center"  Height="53" Margin="0,-2,0,0" VerticalAlignment="Top" Width="Auto" Source="Assets/Remember-a-Person.jpg" Stretch="Fill"/>
         <ProgressRing x:Name="progressRingMainPage" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" RequestedTheme="Dark" Foreground="#FFC3D700"/>
-        <TextBlock x:Name="txtResponse" HorizontalAlignment="Left" Margin="10,496,0,0" TextWrapping="Wrap" Text="Capture a picture form your device camera or upload one from your gallery and search in your database. But, first go to settings and configure the application!" VerticalAlignment="Top" Height="90" Width="345" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <TextBlock x:Name="txtResponse" HorizontalAlignment="Center" Margin="10,496,0,0" TextWrapping="Wrap" Text="Capture a picture form your device camera or upload one from your gallery and search in your database. But, first go to settings and configure the application!" VerticalAlignment="Top" Height="90" Width="345" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
     </Grid>
 </Page>

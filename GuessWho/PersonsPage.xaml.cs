@@ -6,9 +6,9 @@ using Windows.UI.Popups;
 
 namespace GuessWho
 {
-    public sealed partial class PersonsPage : Page
+    public sealed partial class PersonPage : Page
     {
-        public PersonsPage()
+        public PersonPage()
         {
             InitializeComponent();
             AppBarButtonPersonRefresh_Click(null, null);
@@ -68,7 +68,7 @@ namespace GuessWho
 
         private async void AppBarButtonEditPerson_Click(object sender, RoutedEventArgs e)
         {
-            if (null != personListView.SelectedItem && !((PersonGroups)personListView.SelectedItem).name.Equals("..."))
+            if (null != personListView.SelectedItem && !((Persons)personListView.SelectedItem).name.Equals("..."))
             {
                 this.IsEnabled = false;
                 personProgressRing.IsActive = true;
@@ -137,9 +137,17 @@ namespace GuessWho
             Frame.Navigate(typeof(MainPage));
         }
 
-        private void appbarPersonNextButton_Click(object sender, RoutedEventArgs e)
+        private async void appbarPersonNextButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(PersonFace));
+            if (null != personListView.SelectedItem)
+            {
+                Frame.Navigate(typeof(PersonFace));
+            }
+            else
+            {
+                MessageDialog dialog = new MessageDialog("Select a person to add Face!", "Navigation Error");
+                await dialog.ShowAsync();
+            }            
         }
     }
 }

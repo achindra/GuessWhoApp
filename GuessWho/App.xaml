@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:GuessWho"
-    RequestedTheme="Light">
+    RequestedTheme="Dark">
     <Application.Resources>
         <x:String x:Key="BaseURI">https://api.projectoxford.ai/face/v1.0/persongroups</x:String>
         <x:String x:Key="StoragePath">https://function073638f08fcd.blob.core.windows.net/</x:String>

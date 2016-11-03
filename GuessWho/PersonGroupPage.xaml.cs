@@ -127,9 +127,17 @@ namespace GuessWho
             Frame.Navigate(typeof(MainPage));
         }
 
-        private void appbarPersonGroupNextButton_Click(object sender, RoutedEventArgs e)
+        private async void appbarPersonGroupNextButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(PersonsPage));
+            if (null != personGroupListView.SelectedItem)
+            {
+                Frame.Navigate(typeof(PersonPage));
+            }
+            else
+            {
+                MessageDialog dialog = new MessageDialog("Select a PersonGroup to add Person to!", "Navigation Error");
+                await dialog.ShowAsync();
+            }
         }
         
     }

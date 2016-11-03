@@ -26,6 +26,8 @@ namespace GuessWho
 
             listViewPeopleGroup.ItemsSource = globals.gPersonGroupList;
             listViewPeopleGroup.DisplayMemberPath = "name";
+            
+            appbarPersonGroupNextButton.IsEnabled = HttpHandler.initDone;
         }
 
         private async void appBarTrainButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
@@ -82,6 +84,16 @@ namespace GuessWho
             PersonGroups personGroup = (PersonGroups)listViewPeopleGroup.SelectedItem;
             globals.gPersonGroupSelected = personGroup;
             globals.gPersonSelected = null;
+        }
+
+        private void appbarPersonGroupNextButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(PersonGroupPage));
+        }
+
+        private void appbarFaceHomeButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
         }
     }
 }

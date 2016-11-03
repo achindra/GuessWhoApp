@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="GuessWho.PersonsPage"
+    x:Class="GuessWho.PersonPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:GuessWho"
@@ -13,7 +13,7 @@
             </CommandBar.Content>
             <AppBarButton x:Name="appbarPersonHomeButton" Icon="Home" Label="Cancel" Click="appbarPersonHomeButton_Click"  IsEnabled="True"/>
             <AppBarButton x:Name="appbarPersonRefreshButton" Icon="Refresh" Label="Refresh" Click="AppBarButtonPersonRefresh_Click"/>
-            <AppBarButton x:Name="appbarPersonNextButton" Icon="Next" Label="Next" Click="appbarPersonNextButton_Click"  IsEnabled="False"/>
+            <AppBarButton x:Name="appbarPersonNextButton" Icon="WebCam" Label="Add Face" Click="appbarPersonNextButton_Click"  IsEnabled="False"/>
             <AppBarSeparator/>
             <AppBarButton x:Name="appbarAddPersonButton" Icon="Add" Label="Add" Click="AppBarButtonAddPerson_Click"/>
             <AppBarButton x:Name="appbarEditPersonButton" Icon="Edit" Label="Update" Click="AppBarButtonEditPerson_Click" IsEnabled="False"/>
@@ -22,10 +22,10 @@
     </Page.BottomAppBar>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="4,75,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name="txtPerson" HorizontalAlignment="Left" Margin="95,480,0,0" TextWrapping="Wrap" Text="New Person Name" VerticalAlignment="Top" Width="259" InputScope="AlphanumericPin"/>
-        <TextBox x:Name="txtPersonContext" HorizontalAlignment="Left" Margin="95,522,0,0" TextWrapping="Wrap" Text="New Person Details" VerticalAlignment="Top" Width="259" Height="63"/>
-        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="4,472,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="3" Margin="4,75,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox x:Name="txtPerson" HorizontalAlignment="Left" Margin="95,480,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="259" InputScope="AlphanumericPin" PlaceholderText="New Person Name"/>
+        <TextBox x:Name="txtPersonContext" HorizontalAlignment="Left" Margin="95,522,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="259" Height="63" PlaceholderText="New Person Details"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="3" Margin="4,472,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
         <TextBlock x:Name="textBlockPerson" HorizontalAlignment="Center" Margin="10,47,10,0" TextWrapping="Wrap" Text="People in Group" VerticalAlignment="Top" Height="29" Width="340" TextAlignment="Center" FontWeight="Bold" FontFamily="Segoe WP Black" FontSize="18"/>
         <ListView x:Name="personListView" HorizontalAlignment="Left" Height="384" Margin="10,83,0,0" VerticalAlignment="Top" Width="335" MinWidth="100" SelectionChanged="personListView_SelectionChanged"/>
         <ProgressRing x:Name="personProgressRing" VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" Height="50" MinWidth="50" MinHeight="50" Foreground="Blue" />

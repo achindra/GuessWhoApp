@@ -11,15 +11,18 @@
             <CommandBar.Content>
                 <Grid/>
             </CommandBar.Content>
+            <AppBarButton x:Name="appbarFaceHomeButton" Icon="Home" Label="Home" Click="appbarFaceHomeButton_Click"  IsEnabled="True"/>
+            <AppBarButton x:Name="appbarPersonGroupNextButton" Icon="People" Label="People Group" Click="appbarPersonGroupNextButton_Click" />
+            <AppBarSeparator/>
             <AppBarButton x:Name="appbarSaveButton" Icon="Save" Label="Save" Click="appbarSaveButton_Click"/>
             <AppBarButton x:Name="appbarCancelButton" Icon="Cancel" Label="Close" Click="appbarCancelButton_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Left" Width="360">
-        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="0,590,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
-        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="2,376,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
-        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="4,75,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="3" Margin="0,590,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="3" Margin="2,376,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="3" Margin="4,75,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="10,47,10,0" TextWrapping="Wrap" Text="Settings" VerticalAlignment="Top" Height="29" Width="340" TextAlignment="Center" FontWeight="Bold" FontFamily="Segoe WP Black" FontSize="18"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,83,0,0" TextWrapping="Wrap" Text="Account Details" VerticalAlignment="Top" FontWeight="Bold"/>
         <HyperlinkButton Content="Subscription Key (Face Preview)" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" NavigateUri="https://www.microsoft.com/cognitive-services/en-us/subscriptions"/>
