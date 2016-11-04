@@ -42,7 +42,7 @@ namespace GuessWho
         public static async Task<string> DeletePersonFace(string personGroupId, string personId, string persistedFaceId)
         {
             string responseBody = null;
-            string uri = HttpHandler.BaseUri + "/" + personGroupId + "/persons/" + personId;
+            string uri = HttpHandler.BaseUri + "/" + personGroupId + "/persons/" + personId + "/persistedFaces/" + persistedFaceId;
             HttpResponseMessage response = await HttpHandler.client.DeleteAsync(uri);
             if (response.IsSuccessStatusCode)
             {

@@ -115,10 +115,11 @@ namespace GuessWho
             string responseBody = null;
             string uri = HttpHandler.BaseUri + "/" + personGroupId + "/training";
             HttpResponseMessage response = await HttpHandler.client.GetAsync(uri);
+            responseBody = await response.Content.ReadAsStringAsync();
             if (!response.IsSuccessStatusCode)
             {
-                responseBody = await response.Content.ReadAsStringAsync();
                 globals.ShowJsonErrorPopup(responseBody);
+                responseBody = "";
             }
             return responseBody;
         }

@@ -141,7 +141,10 @@ namespace GuessWho
                         globals.gPersonGroupList = await PersonGroupCmds.ListPersonGroups();
 
                     List<string> names = await VisitorCmds.CheckVisitorFace(responseBody, globals.gPersonGroupList);
-                    txtResponse.Text = string.Join(", ", names.ToArray());
+                    if (0 == names.Count)
+                        txtResponse.Text = "Sorry, I don't know.";
+                    else
+                        txtResponse.Text = string.Join(", ", names.ToArray());
                 }
                 else
                 {

@@ -51,7 +51,11 @@ namespace GuessWho
             if (null != globals.gPersonGroupSelected && globals.gPersonGroupSelected.name.Equals("...") == false)
             {
                 string response = await PersonGroupCmds.StatusPersonGroups(globals.gPersonGroupSelected.personGroupId);
-                globals.ShowJsonErrorPopup(response);
+                if (!response.Equals(""))
+                {
+                    MessageDialog dialog = new MessageDialog(response, "Training Status");
+                    await dialog.ShowAsync();
+                }
             }
             else
             {
