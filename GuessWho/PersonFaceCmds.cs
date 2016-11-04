@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.Storage.Streams;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Media.Imaging;
 
 namespace GuessWho
@@ -111,6 +112,11 @@ namespace GuessWho
                     await blob.DeleteIfExistsAsync();
                     blob = HttpHandler.thumbContainer.GetBlockBlobReference(blobName);
                     await blob.DeleteIfExistsAsync();
+                }
+                else
+                {
+                    MessageDialog dialog = new MessageDialog("Picture added to person, it will take some time to show up in the list here. Don't forget to 'Train' person group from settings.", "Picture Added");
+                    await dialog.ShowAsync();
                 }
             }
         }

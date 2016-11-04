@@ -22,22 +22,23 @@
     </Page.BottomAppBar>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="4,75,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
-        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="10,581,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="3" Margin="4,75,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="3" Margin="10,581,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
         <TextBlock x:Name="textBlockFace" HorizontalAlignment="Center" Margin="10,47,10,0" TextWrapping="Wrap" Text="Face" VerticalAlignment="Top" Height="29" Width="340" TextAlignment="Center" FontWeight="Bold" FontFamily="Segoe WP Black" FontSize="18"/>
 
         <ListView x:Name="personFaceListView" SelectionChanged="personFaceListView_SelectionChanged"
-                  HorizontalAlignment="Left" Height="493" Margin="10,83,0,0" VerticalAlignment="Top" Width="335" MinWidth="100"                   
-                  ScrollViewer.HorizontalScrollMode="Enabled" ScrollViewer.VerticalScrollMode="Disabled"
-                  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                  >
-            <!--ItemsSource="{Binding ElementName=UI, Path=FaceImageCollection}"-->
+                  HorizontalAlignment="Left" Height="493" Margin="10,83,0,0" VerticalAlignment="Top" Width="Auto" MinWidth="300">
+            <!--ItemsControl.Template>
+                <ControlTemplate>
+                    <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto">
+                        <Image  Height="99" Source="{Binding Image}" Tag="{Binding FaceInfo}" ToolTipService.ToolTip="{Binding PersistedFaceId}" />
+                    </ScrollViewer>
+                </ControlTemplate-->
+
             <ListView.ItemTemplate>
-                <DataTemplate>
-                    <!--StackPanel Width="100" Height="100"-->
+                <DataTemplate ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.IsHorizontalScrollChainingEnabled="True" ScrollViewer.HorizontalScrollMode="Enabled" ScrollViewer.IsHorizontalRailEnabled="True" ScrollViewer.HorizontalScrollBarVisibility="Auto">
                     <Image  Height="99" Source="{Binding Image}" Tag="{Binding FaceInfo}" ToolTipService.ToolTip="{Binding PersistedFaceId}" />
-                        <!--TextBlock Text="{Binding persistedFaceId}" /-->
-                    </DataTemplate>
+                </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
         <ProgressRing x:Name="personFaceProgressRing" VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" Height="50" MinWidth="50" MinHeight="50" Foreground="Blue" />

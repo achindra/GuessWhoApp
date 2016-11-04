@@ -120,6 +120,7 @@ namespace GuessWho
                                                                         globals.gFaceSelected.persistedFaceId);
 
                 personFaceProgressRing.IsActive = false;
+                appbarDeleteFaceButton.IsEnabled = true;
                 appbarFaceRefreshButton.IsEnabled = true;
                 appbarFaceAddFromCameraButton.IsEnabled = true;
                 appbarFaceAddFromFileButton.IsEnabled = true;
@@ -147,6 +148,7 @@ namespace GuessWho
 
         private async void appbarFaceAddFromFileButton_Click(object sender, RoutedEventArgs e)
         {
+            personFaceProgressRing.IsActive = true;
             appbarDeleteFaceButton.IsEnabled = false;
             appbarFaceAddFromCameraButton.IsEnabled = false;
             appbarFaceAddFromFileButton.IsEnabled = false;
@@ -167,6 +169,7 @@ namespace GuessWho
             }
 
             personFaceProgressRing.IsActive = false;
+            appbarDeleteFaceButton.IsEnabled = true;
             appbarFaceRefreshButton.IsEnabled = true;
             appbarFaceAddFromCameraButton.IsEnabled = true;
             appbarFaceAddFromFileButton.IsEnabled = true;

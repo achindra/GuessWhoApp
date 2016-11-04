@@ -27,7 +27,7 @@
         <TextBox x:Name="txtPersonGroupContext" HorizontalAlignment="Left" Margin="95,522,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="259" Height="63" PlaceholderText="New Group Details"/>
         <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="3" Margin="4,472,0,0" Stroke="Gray" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="10,47,10,0" TextWrapping="Wrap" Text="Person Group" VerticalAlignment="Top" Height="29" Width="340" TextAlignment="Center" FontWeight="Bold" FontFamily="Segoe WP Black" FontSize="18"/>
-        <ListView x:Name="personGroupListView" HorizontalAlignment="Left" Height="384" Margin="10,83,0,0" VerticalAlignment="Top" Width="335" MinWidth="100" SelectionChanged="peopleListView_SelectionChanged"/>
+        <ListView x:Name="personGroupListView" HorizontalAlignment="Left" Height="384" Margin="10,83,0,0" VerticalAlignment="Top" Width="Auto" MinWidth="100" SelectionChanged="peopleListView_SelectionChanged"/>
         <ProgressRing x:Name="personGroupProgressRing" VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" Height="50" MinWidth="50" MinHeight="50" Foreground="Blue" />
         <TextBlock x:Name="txtBlkGroupTitle" HorizontalAlignment="Left" Margin="10,480,0,0" TextWrapping="Wrap" Text="Group Title" VerticalAlignment="Top"/>
         <TextBlock x:Name="txtBlockContext" HorizontalAlignment="Left" Margin="10,522,0,0" TextWrapping="Wrap" Text="Information" VerticalAlignment="Top"/>
